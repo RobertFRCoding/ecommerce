@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getWeb3, getContract, registrarEmpresa } from '../contract';
+import { getWeb3, getContract, registrarEmpresa,  Empresas } from '../contract';
 
 function RegistroEmpresas() {
   const [nombreEmpresa, setNombreEmpresa] = useState('');
@@ -29,17 +29,37 @@ function RegistroEmpresas() {
   
     initContract();
   }, []);
-  
+
+  const verificarEmpresaExitente = async (wallet) => {
+    try {
+      if (!contract) {
+        throw new Error('El contrato no esta disponible');
+      }
+      const informacionEmpresa = await Empresas(contract, wallet);
+
+      if (informacionEmpresa.nombre !=='') {
+        alert('Ya existe una empresa asociada a esta wallet.');
+        return true;
+      }
+    return false;
+  } catch (error) {
+    console.log(error);
+    return true;
+  }
+};
 
   const handleSubmit = async (event) => {
     event.preventDefault();
   
     try {
-      if (!contract) {
-        throw new Error('El contrato no está disponible.');
-      }
       if (!nombreEmpresa || !nifEmpresa || !wallet) {
         throw new Error('Por favor, complete todos los campos.');
+      }
+
+      const empresaExistente = await verificarEmpresaExitente(wallet);
+
+      if (empresaExistente) {
+        return;
       }
   
       await registrarEmpresa(contract, nombreEmpresa, nifEmpresa, wallet);
