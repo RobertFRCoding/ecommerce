@@ -33,18 +33,35 @@ new Promise((resolve, reject) => {
 });
 
 const registrarEmpresa = async (contract, nombreEmpresa, nifEmpresa, wallet) => {
-  const accounts = await web3.eth.getAccounts();
-
   try {
+    const accounts = await web3.eth.getAccounts();
+    if (accounts.length === 0) {
+      throw new Error('No hay cuentas disponibles.');
+    }
+
     await contract.methods.registrarEmpresa(nombreEmpresa, nifEmpresa, wallet).send({ from: accounts[0] });
   } catch (error) {
     throw error;
   }
 };
 
+const Empresas = async (contract, wallet) => {
+  try {
+    const resultado = await contract.methods.empresas(wallet).call();
+    return resultado;
+  } catch (error) {
+    console.error('Error al realizar la lectura del contrato:', error);
+    throw error;
+  }
+};
+
+
+
+
 export { 
   getWeb3, 
   getContract, 
   contractAddress,
-  registrarEmpresa
+  registrarEmpresa,
+  Empresas
 }; 
