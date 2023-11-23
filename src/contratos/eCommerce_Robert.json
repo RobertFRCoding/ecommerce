@@ -1,5 +1,85 @@
 [
     {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_productoId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_cantidad",
+                "type": "uint256"
+            }
+        ],
+        "name": "aumentarStock",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_productoId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_cantidad",
+                "type": "uint256"
+            }
+        ],
+        "name": "comprarProducto",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_productoId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_cantidad",
+                "type": "uint256"
+            }
+        ],
+        "name": "disminuirStock",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "eliminarEmpresa",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "empresaWallet",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "nombreEmpresa",
+                "type": "string"
+            }
+        ],
+        "name": "EmpresaEliminada",
+        "type": "event"
+    },
+    {
         "anonymous": false,
         "inputs": [
             {
@@ -83,20 +163,74 @@
     {
         "inputs": [
             {
+                "internalType": "string",
+                "name": "_nombreEmpresa",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_nifEmpresa",
+                "type": "string"
+            }
+        ],
+        "name": "registrarEmpresa",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_nombreProducto",
+                "type": "string"
+            },
+            {
                 "internalType": "uint256",
-                "name": "_productoId",
+                "name": "_precioProducto",
                 "type": "uint256"
             },
             {
                 "internalType": "uint256",
-                "name": "_cantidad",
+                "name": "_stock",
                 "type": "uint256"
             }
         ],
-        "name": "comprarProducto",
+        "name": "registrarProducto",
         "outputs": [],
-        "stateMutability": "payable",
+        "stateMutability": "nonpayable",
         "type": "function"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "empresaWallet",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "productoId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "cantidad",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "aumento",
+                "type": "bool"
+            }
+        ],
+        "name": "StockModificado",
+        "type": "event"
     },
     {
         "inputs": [
@@ -188,6 +322,11 @@
                 "internalType": "uint256",
                 "name": "",
                 "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
             }
         ],
         "stateMutability": "view",
@@ -229,52 +368,6 @@
             }
         ],
         "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "string",
-                "name": "_nombreEmpresa",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "_nifEmpresa",
-                "type": "string"
-            },
-            {
-                "internalType": "address",
-                "name": "_wallet",
-                "type": "address"
-            }
-        ],
-        "name": "registrarEmpresa",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "string",
-                "name": "_nombreProducto",
-                "type": "string"
-            },
-            {
-                "internalType": "uint256",
-                "name": "_precioProducto",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "_stock",
-                "type": "uint256"
-            }
-        ],
-        "name": "registrarProducto",
-        "outputs": [],
-        "stateMutability": "nonpayable",
         "type": "function"
     }
 ]
