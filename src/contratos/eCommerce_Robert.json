@@ -61,6 +61,19 @@
         "type": "function"
     },
     {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_productoId",
+                "type": "uint256"
+            }
+        ],
+        "name": "eliminarProducto",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "anonymous": false,
         "inputs": [
             {
@@ -105,6 +118,24 @@
         "type": "event"
     },
     {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_productoId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_nuevoPrecio",
+                "type": "uint256"
+            }
+        ],
+        "name": "modificarPrecioProducto",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
         "anonymous": false,
         "inputs": [
             {
@@ -133,6 +164,31 @@
             }
         ],
         "name": "ProductoComprado",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "empresaWallet",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "productoId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "nombreProducto",
+                "type": "string"
+            }
+        ],
+        "name": "ProductoEliminado",
         "type": "event"
     },
     {
@@ -256,6 +312,30 @@
                 "internalType": "address",
                 "name": "wallet",
                 "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "eliminada",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "name": "empresasPorNIF",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
             }
         ],
         "stateMutability": "view",
@@ -281,7 +361,32 @@
         "type": "function"
     },
     {
-        "inputs": [],
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_nombreEmpresa",
+                "type": "string"
+            }
+        ],
+        "name": "obtenerDireccionPorNombre",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_empresaWallet",
+                "type": "address"
+            }
+        ],
         "name": "obtenerNumeroProductos",
         "outputs": [
             {
@@ -327,6 +432,88 @@
                 "internalType": "uint256",
                 "name": "",
                 "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_empresaWallet",
+                "type": "address"
+            }
+        ],
+        "name": "obtenerProductosPorEmpresa",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "nombreProducto",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "precioProducto",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "stock",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "propietario",
+                        "type": "address"
+                    }
+                ],
+                "internalType": "struct eCommerce_Robert.Producto[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_nombreEmpresa",
+                "type": "string"
+            }
+        ],
+        "name": "obtenerProductosPorNombre",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "nombreProducto",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "precioProducto",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "stock",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "propietario",
+                        "type": "address"
+                    }
+                ],
+                "internalType": "struct eCommerce_Robert.Producto[]",
+                "name": "",
+                "type": "tuple[]"
             }
         ],
         "stateMutability": "view",
