@@ -42,6 +42,7 @@ const registrarEmpresa = async (contract, nombreEmpresa, nifEmpresa, wallet) => 
   }
 };
 
+
 const registrarProducto = async (contract, nombreProducto, precioProducto, stock, wallet) => {
   try {
     const accounts = await web3.eth.getAccounts();
@@ -103,3 +104,4 @@ export {
   registrarProducto,
   ObtenerProducto
 };
+

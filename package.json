@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce",
+  "name": "y",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/RobertFRCoding/ecommerce.git",
+  "author": "Fegoca <federico.gomez.cano@gmail.com>",
+  "license": "MIT"
 }
