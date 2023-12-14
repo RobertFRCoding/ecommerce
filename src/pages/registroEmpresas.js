@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getWeb3, getContract, registrarEmpresa, Empresas } from '../contract';
+import './registroEmpresas.css'; // Estilo CSS
+
 
 function RegistroEmpresas() {
   const [nombreEmpresa, setNombreEmpresa] = useState('');

@@ -1,0 +1,109 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Contenedor principal */
+  div {
+    max-width: 10000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título del formulario */
+  h1 {
+    color: #333333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos del formulario */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilos de las etiquetas */
+  label {
+    margin-bottom: 5px;
+    color: #555555;
+  }
+  
+  /* Estilos de los campos de entrada */
+  input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilos del botón de envío */
+  button {
+    padding: 10px 20px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005f73;
+  }
+  
+  /* Mensajes de alerta */
+  .alert {
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  /* Mensajes de éxito */
+  .success {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  /* Estilos para el contenedor del equipo */
+.equipo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilos para cada miembro del equipo */
+.miembro-equipo {
+  text-align: center;
+}
+
+.miembro-equipo img {
+  width: 150px; /* Ajusta el tamaño según tus necesidades */
+  height: 150px;
+  border-radius: 50%; /* Para hacer las imágenes circulares */
+  object-fit: cover; /* Para mantener la proporción de las imágenes */
+  margin-bottom: 10px;
+}
+
+.miembro-equipo h3 {
+  margin: 0;
+}
+/* Estilos para los botones */
+button {
+  margin-right: 10px; /* Añade un margen a la derecha de cada botón */
+}
+  
