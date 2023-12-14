@@ -1,0 +1,32 @@
+.home-container {
+    text-align: match-parent;
+    padding: 250px;
+  }
+  
+  .home-container h1 {
+    font-size: 80px;
+    color: #1109f4; /* Color de texto principal */
+  }
+  
+  .home-container p {
+    font-size: 35px;
+    color: #666; /* Color de texto secundario */
+    margin-top: 20px;
+  }
+  .home-container {
+    text-align: center;
+    padding: 250px;
+    background: url('/src/components/zaptillas.jpeg') center/cover no-repeat;
+  }
+  
+  .home-container h1 {
+    font-size: 80px;
+    color: #1109f4; /* Color de texto principal */
+  }
+  
+  .home-container p {
+    font-size: 35px;
+    color: #666; /* Color de texto secundario */
+    margin-top: 20px;
+  }
+  
